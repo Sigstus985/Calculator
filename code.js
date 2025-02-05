@@ -34,24 +34,25 @@ numberButtons.forEach((btn) => {
 
 operators.forEach((btn) => {
 	btn.addEventListener("click", (e) => {
-		handleOperator(e.target.textContent);
+		handleOperator(e.target.textContent, e.target.id);
 	});
 });
 
 function handleNumber(number) {
-	num1 += number;
-	displayNum.innerHTML = num1;
-	removeClr();
-	console.log(num1);
-    if (num1.length > 9) {
-        console.log("long as nuimba brah")
-    }
+	if (!num1 === num2) {
+		console.log("please choose an operator");
+	} else if ( calcCheck === false) {
+		num1 += number;
+		displayNum.innerHTML = num1;
+		removeClr();
+		console.log(num1);
+	}
 }
 
-function handleOperator(op) {
-    if (num1) {
-        num2 = Number(num2);
-        num1 = Number(num1);
+function handleOperator(op, id) {
+	if (num1) {
+		num2 = Number(num2);
+		num1 = Number(num1);
 		if (opCheck == false) {
 			operator = op;
 			num2 = num1;
@@ -65,10 +66,11 @@ function handleOperator(op) {
 			num1 = "";
 			console.log("handleOperator");
 		}
-		changeClr();
+		changeClr(id);
 		decimalCheck = false;
 		opCheck = true;
 		console.log(opCheck);
+        calcCheck= false;
 	} else {
 		console.log("please select a number first");
 	}
@@ -93,13 +95,16 @@ function calculate() {
 		} else {
 			console.log(operator2);
 		}
-		displayNum.textContent = num2;
+		displayNum.textContent = Math.floor(num2 * 1000) / 1000;
 		opCheck = false;
-		decimalCheck = false;
+		if (num2 % 1 != 0) {
+			decimalCheck = true;
+		}
 		num1 = num2;
 		console.log("calculate");
 		console.log(active);
 		active = "";
+		calcCheck = true;
 	} else {
 		console.log("please select an operator");
 	}
@@ -111,22 +116,23 @@ function clear() {
 	operator = "";
 	operator2 = "";
 	opCheck = false;
+	calcCheck = false;
 	decimalCheck = false;
 	displayNum.textContent = num2;
 }
 
 function decimal() {
-	if (decimalCheck == false) {
+	if (decimalCheck == false && num1) {
 		num1 += ".";
-		displayNum.innerHTML = num1;
+		displayNum.textContent = num1;
 		decimalCheck = true;
 	} else {
 		console.log("decimal is already present");
 	}
 }
 
-function changeClr() {
-	if (operator === "+") {
+function changeClr(id) {
+	/* if (operator === "+") {
 		addBtn.classList.add("active");
 	} else if (operator === "-") {
 		subtractBtn.classList.add("active");
@@ -134,7 +140,9 @@ function changeClr() {
 		multiplyBtn.classList.add("active");
 	} else if (operator === "/") {
 		divideBtn.classList.add("active");
-	}
+	} */
+    document.getElementById(`${id}`).classList.add("active")
+    console.log(id)
 }
 
 function removeClr() {

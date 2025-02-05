@@ -1,102 +1,136 @@
-@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
 
-:root{
-    --white: #FFFCFF;
-    --purple: #443742;
-    --brown: #C3B299;
-    --green: #CBD4C2;
-    --blue: #247BA0;
+:root {
+	--white: #fffcff;
+	--purple: #443742;
+	--brown: #c3b299;
+	--green: #cbd4c2;
+	--blue: #247ba0;
+	--darkbrown: #998b75;
 }
 
-*{
-    font-family: "Chakra Petch", sans-serif;
+* {
+	font-family: "Chakra Petch", sans-serif;
+    margin: 0px
 }
 
-body{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--white);
-    margin: 0;
-    color: black;
+body {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--white);
+	margin: 0;
+	color: black;
+    transition-duration: 0.3s;
 }
 
-#calculator{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: 1.5fr repeat(5, 1fr);
-    gap: 3px;
-    width: 20rem;
-    aspect-ratio: 2/3;
-    background-color: var(--purple);
-    border: solid 10px var(--purple);
-    border-radius: 15px;
-    margin-top: 20px;
-    padding: 20px;
+.calculator {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: 1.5fr repeat(5, 1fr);
+	gap: 3px;
+	width: min(20rem, 70%);
+	aspect-ratio: 2/3;
+	background-color: var(--purple);
+	border: solid 10px var(--purple);
+	border-radius: 15px;
+	margin-top: 20px;
+	padding: 20px;
+    transition-duration: 0.3s;
+
 }
 
-h1{
-    grid-row-start: 1;
-    grid-column-start: 1;
-    grid-column-end: 5;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    flex-wrap: wrap;
-    text-align: end;
-    font-size: 4rem;
-    font-weight: 300;
-    margin: 0;
-    width: 100%;
-    border-radius: 5px;
+h1 {
+    margin-top: 10px;
+    font-size: 3rem;
+    transition-duration: 0.3s;
+
 }
 
-button{
-    background-color: var(--brown);
-    border-style: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: xx-large;
-    font-weight: 200;
+p {
+    margin: 0px;
+    transition-duration: 0.3s;
 }
 
-.operator{
-    background-color: var(--green);
+h2 {
+	grid-row-start: 1;
+	grid-column-start: 1;
+	grid-column-end: 5;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	flex-wrap: wrap;
+	text-align: end;
+	font-size: 4rem;
+	font-weight: 300;
+	margin: 0;
+	width: 100%;
+	border-radius: 5px;
+    transition-duration: 0.3s;
 }
 
-#addition{
-    grid-column-start: 1;
-    grid-row-start: 2;
+button {
+	background-color: var(--brown);
+	border-style: none;
+	border-radius: 5px;
+	cursor: pointer;
+	font-size: xx-large;
+	font-weight: 200;
 }
 
-#subtraction{
-    grid-column-start: 2;
-    grid-row-start: 2;
+button:active {
+	background-color: var(--darkbrown);
 }
 
-#multiplication{
-    grid-column-start: 3;
-    grid-row-start: 2;
+.operator {
+	background-color: var(--green);
 }
 
-#division{
-    grid-column-start: 4;
-    grid-row-start: 2;
+#addition {
+	grid-column-start: 1;
+	grid-row-start: 2;
 }
 
-#clear{
-    grid-column-start: 3;
-    grid-row-start: 6;
+#subtraction {
+	grid-column-start: 2;
+	grid-row-start: 2;
 }
 
-#equal{
-    background-color: var(--blue);
-    grid-column-start: 4;
-    grid-row-start: 3;
-    grid-row-end: 7;
+#multiplication {
+	grid-column-start: 3;
+	grid-row-start: 2;
+}
+
+#division {
+	grid-column-start: 4;
+	grid-row-start: 2;
+}
+
+#clear {
+	grid-column-start: 3;
+	grid-row-start: 6;
+}
+
+#equal {
+	background-color: var(--blue);
+	grid-column-start: 4;
+	grid-row-start: 3;
+	grid-row-end: 7;
 }
 
 .active {
-    background-color: var(--blue);
+	background-color: var(--blue);
+}
+
+@media (max-width: 300px) {
+	h1{
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 3rem;
+	}
+    p {
+        font-size: 0.8rem;
+    }
 }
