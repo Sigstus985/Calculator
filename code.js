@@ -17,14 +17,11 @@ const divideBtn = document.getElementById("division");
 
 const numberButtons = document.querySelectorAll(".number");
 
-const AC = document.querySelector(".AC");
-AC.addEventListener("click", clear);
+document.getElementById("clear").addEventListener("click", clear);
 
-const equal = document.querySelector(".equal");
-equal.addEventListener("click", calculate);
+document.getElementById("equal").addEventListener("click", calculate);
 
-const dot = document.querySelector(".decimal");
-dot.addEventListener("click", decimal);
+document.getElementById("decimal").addEventListener("click", decimal);
 
 numberButtons.forEach((btn) => {
 	btn.addEventListener("click", (e) => {
@@ -40,8 +37,8 @@ operators.forEach((btn) => {
 
 function handleNumber(number) {
 	if (!num1 === num2) {
-		console.log("please choose an operator");
-	} else if ( calcCheck === false) {
+		console.log("Please choose an operator first.");
+	} else if (calcCheck === false) {
 		num1 += number;
 		displayNum.innerHTML = num1;
 		removeClr();
@@ -58,21 +55,19 @@ function handleOperator(op, id) {
 			num2 = num1;
 			num1 = "";
 			active = operator;
-			console.log("handleOperator");
 		} else {
 			operator2 = op;
 			calculate(op);
 			num2 = num1;
 			num1 = "";
-			console.log("handleOperator");
 		}
 		changeClr(id);
 		decimalCheck = false;
 		opCheck = true;
 		console.log(opCheck);
-        calcCheck= false;
+		calcCheck = false;
 	} else {
-		console.log("please select a number first");
+		console.log("Please select a number first.");
 	}
 }
 
@@ -122,12 +117,15 @@ function clear() {
 }
 
 function decimal() {
-	if (decimalCheck == false && num1) {
+	console.log(decimalCheck);
+	if (decimalCheck == false && num1 && calcCheck === false) {
 		num1 += ".";
 		displayNum.textContent = num1;
 		decimalCheck = true;
 	} else {
-		console.log("decimal is already present");
+		console.log(
+			"Decimal is already present, or current number is not to be modified."
+		);
 	}
 }
 
@@ -141,8 +139,8 @@ function changeClr(id) {
 	} else if (operator === "/") {
 		divideBtn.classList.add("active");
 	} */
-    document.getElementById(`${id}`).classList.add("active")
-    console.log(id)
+	document.getElementById(`${id}`).classList.add("active");
+	console.log(id);
 }
 
 function removeClr() {

@@ -7,6 +7,7 @@
 	--green: #cbd4c2;
 	--blue: #247ba0;
 	--darkbrown: #998b75;
+    --darkblue: #175874;
 }
 
 * {
@@ -79,44 +80,56 @@ button {
 	font-weight: 200;
 }
 
-button:active {
-	background-color: var(--darkbrown);
+.number:active {
+    background-color: var(--darkbrown);
 }
 
 .operator {
-	background-color: var(--green);
+    background-color: var(--green);
 }
 
-#addition {
-	grid-column-start: 1;
+.operator:active{
+    background-color: var(--blue);
+}
+
+.addition {
+    grid-column-start: 1;
 	grid-row-start: 2;
 }
 
-#subtraction {
-	grid-column-start: 2;
+.subtraction {
+    grid-column-start: 2;
 	grid-row-start: 2;
 }
 
-#multiplication {
+.multiplication {
 	grid-column-start: 3;
 	grid-row-start: 2;
 }
 
-#division {
+.division {
 	grid-column-start: 4;
 	grid-row-start: 2;
 }
 
-#clear {
+.clear {
 	grid-column-start: 3;
 	grid-row-start: 6;
 }
 
-#equal {
+.clear:active, .decimal:active{
+    background-color: var(--darkbrown);
+}
+
+.equal {
 	background-color: var(--blue);
 	grid-column-start: 4;
 	grid-row-start: 3;
 	grid-row-end: 7;
+}
+
+.equal:active{
+    background-color: var(--darkblue);
 }
 
 .active {
