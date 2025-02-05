@@ -42,7 +42,6 @@ function handleNumber(number) {
 		num1 += number;
 		displayNum.innerHTML = num1;
 		removeClr();
-		console.log(num1);
 	}
 }
 
@@ -64,10 +63,9 @@ function handleOperator(op, id) {
 		changeClr(id);
 		decimalCheck = false;
 		opCheck = true;
-		console.log(opCheck);
 		calcCheck = false;
 	} else {
-		console.log("Please select a number first.");
+		console.log("Please select a number.");
 	}
 }
 
@@ -87,21 +85,17 @@ function calculate() {
 		} else if (operator === "/") {
 			num2 = num2 / num1;
 			operator = operator2;
-		} else {
-			console.log(operator2);
 		}
-		displayNum.textContent = Math.floor(num2 * 1000) / 1000;
+		displayNum.textContent = Math.floor(num2 * 10000000) / 10000000;
 		opCheck = false;
 		if (num2 % 1 != 0) {
 			decimalCheck = true;
 		}
 		num1 = num2;
-		console.log("calculate");
-		console.log(active);
 		active = "";
 		calcCheck = true;
 	} else {
-		console.log("please select an operator");
+		console.log("Please select an operator");
 	}
 }
 
@@ -117,7 +111,6 @@ function clear() {
 }
 
 function decimal() {
-	console.log(decimalCheck);
 	if (decimalCheck == false && num1 && calcCheck === false) {
 		num1 += ".";
 		displayNum.textContent = num1;
@@ -140,7 +133,6 @@ function changeClr(id) {
 		divideBtn.classList.add("active");
 	} */
 	document.getElementById(`${id}`).classList.add("active");
-	console.log(id);
 }
 
 function removeClr() {
