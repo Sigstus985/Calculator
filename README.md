@@ -1,3 +1,2 @@
-https://sigstus985.github.io/Calculator/
-
-This is a simple JS calculator i've built for school. It's still got some bugs which I'm working on.
+This is an imported  version of a school project I previously did which I've done some minor tweaks and updates to.
+Its a pretty simple JS calculator with minimal CSS styling.
