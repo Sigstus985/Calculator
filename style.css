@@ -7,12 +7,12 @@
 	--green: #cbd4c2;
 	--blue: #247ba0;
 	--darkbrown: #998b75;
-    --darkblue: #175874;
+	--darkblue: #175874;
 }
 
 * {
 	font-family: "Chakra Petch", sans-serif;
-    margin: 0px
+	margin: 0px;
 }
 
 body {
@@ -23,7 +23,7 @@ body {
 	background-color: var(--white);
 	margin: 0;
 	color: black;
-    transition-duration: 0.3s;
+	transition-duration: 0.3s;
 }
 
 .calculator {
@@ -38,20 +38,18 @@ body {
 	border-radius: 15px;
 	margin-top: 20px;
 	padding: 20px;
-    transition-duration: 0.3s;
-
+	transition-duration: 0.3s;
 }
 
 h1 {
-    margin-top: 10px;
-    font-size: 3rem;
-    transition-duration: 0.3s;
-
+	margin-top: 10px;
+	font-size: 3rem;
+	transition-duration: 0.3s;
 }
 
 p {
-    margin: 0px;
-    transition-duration: 0.3s;
+	margin: 0px;
+	transition-duration: 0.3s;
 }
 
 h2 {
@@ -62,8 +60,9 @@ h2 {
 	font-size: 4rem;
 	font-weight: 300;
 	border-radius: 5px;
-    transition-duration: 0.3s;
-	overflow-x:auto; overflow-y: scroll;
+	transition-duration: 0.3s;
+	overflow-x: auto;
+	overflow-y: scroll;
 }
 
 button {
@@ -73,28 +72,32 @@ button {
 	cursor: pointer;
 	font-size: xx-large;
 	font-weight: 200;
+}
+
+.number {
 	color: black;
 }
 
 .number:active {
-    background-color: var(--darkbrown);
+	background-color: var(--darkbrown);
 }
 
 .operator {
-    background-color: var(--green);
+	background-color: var(--green);
+	color: black;
 }
 
-.operator:active{
-    background-color: var(--blue);
+.operator:active {
+	background-color: var(--blue);
 }
 
 .addition {
-    grid-column-start: 1;
+	grid-column-start: 1;
 	grid-row-start: 2;
 }
 
 .subtraction {
-    grid-column-start: 2;
+	grid-column-start: 2;
 	grid-row-start: 2;
 }
 
@@ -113,8 +116,9 @@ button {
 	grid-row-start: 6;
 }
 
-.clear:active, .decimal:active{
-    background-color: var(--darkbrown);
+.clear:active,
+.decimal:active {
+	background-color: var(--darkbrown);
 }
 
 .equal {
@@ -124,8 +128,8 @@ button {
 	grid-row-end: 7;
 }
 
-.equal:active{
-    background-color: var(--darkblue);
+.equal:active {
+	background-color: var(--darkblue);
 }
 
 .active {
@@ -133,15 +137,15 @@ button {
 }
 
 @media (max-width: 300px) {
-	h1{
-        font-size: 2rem;
-    }
-    h2 {
-        font-size: 3rem;
+	h1 {
+		font-size: 2rem;
 	}
-    p {
-        font-size: 0.8rem;
-    }
+	h2 {
+		font-size: 3rem;
+	}
+	p {
+		font-size: 0.8rem;
+	}
 	button {
 		font-size: x-large;
 	}
