@@ -32,7 +32,7 @@ body {
 	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: 1.5fr repeat(5, 1fr);
 	gap: 3px;
-	min-height: 300px;
+	height: 300px;
 	text-align: right;
 	background-color: var(--purple);
 	border: solid 5px var(--purple);
@@ -142,7 +142,7 @@ button {
 		border: 10px solid var(--purple);
 		width: 15rem;
 		aspect-ratio: 2/3;
-
+		height: auto;
 	}
 	h1 {
 		font-size: 3rem;
