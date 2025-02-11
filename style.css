@@ -31,7 +31,7 @@ body {
 	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: 1.5fr repeat(5, 1fr);
 	gap: 3px;
-	width: min(20rem, 70%);
+	/* min-width: min(20rem, 70%); */
 	aspect-ratio: 2/3;
 	background-color: var(--purple);
 	border: solid 10px var(--purple);
@@ -72,9 +72,6 @@ button {
 	cursor: pointer;
 	font-size: xx-large;
 	font-weight: 200;
-}
-
-.number {
 	color: black;
 }
 
@@ -84,7 +81,6 @@ button {
 
 .operator {
 	background-color: var(--green);
-	color: black;
 }
 
 .operator:active {
