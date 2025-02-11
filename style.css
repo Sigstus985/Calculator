@@ -73,6 +73,7 @@ button {
 	cursor: pointer;
 	font-size: xx-large;
 	font-weight: 200;
+	color: black;
 }
 
 .number:active {
